@@ -1,3 +1,11 @@
+# Custom
+.DS_Store
+extracted/
+*.txt
+*.model
+*.npy
+*.bz2
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
