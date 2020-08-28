@@ -1,0 +1,4 @@
+beautifulsoup4==4.9.1
+neologdn==0.4
+soupsieve==2.0.1
+wikiextractor==0.1
