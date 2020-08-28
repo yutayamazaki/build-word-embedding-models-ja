@@ -1,17 +1,20 @@
 import os
 import glob
+import unicodedata
+from typing import List
 
+import neologdn
 from bs4 import BeautifulSoup
 
 
 def remove_tag(text: str) -> str:
-    soup = BeautifulSoup(text)
+    soup = BeautifulSoup(text, 'html.parser')
     text = soup.get_text()
     return text
 
 
-def get_sentences(text: str) -> list:
-    sentence_list = []
+def get_sentences(text: str) -> List[str]:
+    sentence_list: List[str] = []
     for s in text.split('\n'):
         if s == '':
             continue
@@ -19,22 +22,23 @@ def get_sentences(text: str) -> list:
     return sentence_list
 
 
-ROOT = 'extracted'
-OUT_TEXT = 'sentences.txt'
+ROOT: str = '../extracted'
+OUT_TEXT: str = 'sentences.txt'
 
-text_dirs = glob.glob(os.path.join(ROOT, '*'))
-text_paths = []
+text_dirs: List[str] = glob.glob(os.path.join(ROOT, '*'))
+text_paths: List[str] = []
 for text_dir in text_dirs:
     text_paths += glob.glob(os.path.join(text_dir, '*'))
 
-
 for idx, t in enumerate(text_paths):
     with open(t, 'r', encoding='utf-8') as f:
-        text = f.read()
-    
-    text = remove_tag(text)
-    sentences = get_sentences(text)
-    
+        text: str = f.read()
+
+    text: str = unicodedata.normalize(u'NFKD', text)
+    text: str = remove_tag(text)
+    text: str = neologdn.normalize(text)
+    sentences: List[str] = get_sentences(text)
+
     with open(OUT_TEXT, 'a', encoding='utf-8') as f:
         for s in sentences:
             f.write(s + '\n')

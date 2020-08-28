@@ -8,8 +8,10 @@ IN_TEXT = 'sentences.txt'
 OUT_TEXT = 'tokenized_with_mecab-ipadic-neologd.txt'
 MAX_FILE_SIZE = 1e9
 
-# tagger = MeCab.Tagger('-Owakati')
-tagger = MeCab.Tagger('-Owakati -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd')
+tagger = MeCab.Tagger(
+    # '-Owakati -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd'
+    '-Owakati -d /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd'
+)
 
 with open(IN_TEXT, 'r', encoding='utf-8') as f:
     sentences = f.readlines()
