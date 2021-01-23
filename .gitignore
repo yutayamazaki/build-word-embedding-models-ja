@@ -3,6 +3,7 @@
 extracted/
 *.txt
 !requirements.txt
+!requirements-dev.txt
 *.model
 *.npy
 *.bz2

@@ -34,9 +34,9 @@ for idx, t in enumerate(text_paths):
     with open(t, 'r', encoding='utf-8') as f:
         text: str = f.read()
 
-    text: str = unicodedata.normalize(u'NFKD', text)
-    text: str = remove_tag(text)
-    text: str = neologdn.normalize(text)
+    text = unicodedata.normalize(u'NFKD', text)
+    text = remove_tag(text)
+    text = neologdn.normalize(text)
     sentences: List[str] = get_sentences(text)
 
     with open(OUT_TEXT, 'a', encoding='utf-8') as f:
