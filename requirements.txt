@@ -5,4 +5,5 @@ mecab-python3==1.0.1
 pyyaml==5.3.1
 unidic-lite==1.0.7
 soupsieve==2.0.1
+tqdm==4.56.0
 wikiextractor==0.1
