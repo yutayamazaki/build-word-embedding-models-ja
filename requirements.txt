@@ -2,7 +2,7 @@ beautifulsoup4==4.9.1
 gensim==3.8.3
 neologdn==0.4
 mecab-python3==1.0.1
-pyyaml==5.3.1
+pyyaml==5.4
 unidic-lite==1.0.7
 soupsieve==2.0.1
 wikiextractor==0.1
