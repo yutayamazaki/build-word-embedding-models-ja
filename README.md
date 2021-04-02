@@ -7,11 +7,9 @@
 5. Execute get_corpus.py
 6. Execute train_word2vec.py
 
+## Training
+
 ```shell
-python3 -m venv venv
-pip install -r requirements.txt
-wget https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2
-python -m wikiextractor -o extracted jawiki-latest-pages-articles.xml.bz2
-python clean_format.py
-python get_corpus.py
+docker build . -t w2v
+docker run -it -v $PWD:/code w2v bash run.sh
 ```
