@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "w2v-ja"
+version = "0.1.0"
+description = ""
+authors = ["None"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+beautifulsoup4 = "^4.9.3"
+gensim = "^4.0.1"
+neologdn = "^0.4"
+mecab-python3 = "^1.0.3"
+PyYAML = "^5.4.1"
+unidic-lite = "^1.0.8"
+soupsieve = "^2.2.1"
+tqdm = "^4.59.0"
+wikiextractor = "^3.0.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

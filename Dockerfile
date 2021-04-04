@@ -13,8 +13,10 @@ RUN apt-get -y update && \
     apt-get autoremove -y &&\
     apt-get clean
 ENV LANG en_US.utf8
-ADD requirements.txt /code
-ADD requirements-dev.txt /code
+ADD pyproject.toml /code
+ADD poetry.lock /code
 RUN pip install -U pip &&\
-    pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt && \
-    rm requirements.txt requirements-dev.txt
+    pip install --no-cache-dir poetry && \
+    poetry config virtualenvs.create false && \
+    poetry install && \
+    rm pyproject.toml poetry.lock
