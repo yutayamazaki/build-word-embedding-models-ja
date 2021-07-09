@@ -1,9 +1,0 @@
-beautifulsoup4
-gensim
-neologdn
-mecab-python3
-pyyaml
-unidic-lite
-soupsieve
-tqdm
-wikiextractor
