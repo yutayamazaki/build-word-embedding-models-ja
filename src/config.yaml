@@ -1,3 +1,3 @@
-model_name: 'wiki_mecab-ipadic-neologd.model'
+model_name: 'wiki_mecab-ipadic-neologd_dim300.model'
 corpus: 'tokenized_with_mecab-ipadic-neologd.txt'
-size: 200  # dimension of WordVec
+size: 300  # dimension of WordVec
